@@ -2,16 +2,17 @@
       "version": "0.2.0",
       "configurations": [
             {
-                  "name": "Debug",
+                  "name": "Debug Raylib Game",
                   "type": "cppdbg",
                   "request": "launch",
-                  "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+                  "program": "${workspaceFolder}\\Project\\02Axe-Game.exe",
                   "args": [],
                   "stopAtEntry": false,
-                  "cwd": "${workspaceFolder}",
+                  "cwd": "${workspaceFolder}\\Project",
                   "environment": [],
-                  "externalConsole": false,
+                  "externalConsole": true,
                   "MIMode": "gdb",
+                  "miDebuggerPath": "C:/raylib/w64devkit/bin/gdb.exe",
                   "setupCommands": [
                         {
                               "description": "Enable pretty-printing for gdb",
@@ -19,39 +20,47 @@
                               "ignoreFailures": false
                         }
                   ],
-                  "windows": {
-                        "miDebuggerPath": "C:/raylib/w64devkit/bin/gdb.exe"
-                  },
-                  "osx": {
-                        "MIMode": "lldb"
-                  },
-                  "linux": {
-                        "miDebuggerPath": "/usr/bin/gdb"
-                  },
-                  "preLaunchTask": "build debug"
+                  "preLaunchTask": "Build Raylib App"
             },
             {
-                  "name": "Run",
+                  "name": "Run Raylib Game",
                   "type": "cppdbg",
                   "request": "launch",
+                  "program": "${workspaceFolder}\\Project\\02Axe-Game.exe",
                   "args": [],
                   "stopAtEntry": false,
-                  "cwd": "${workspaceFolder}",
+                  "cwd": "${workspaceFolder}\\Project",
+                  "environment": [],
+                  "externalConsole": true,
+                  "MIMode": "gdb",
+                  "miDebuggerPath": "C:/raylib/w64devkit/bin/gdb.exe",
+                  "preLaunchTask": "Build Raylib App"
+            },
+            {
+                  "name": "C/C++: gcc.exe build and debug active file",
+                  "type": "cppdbg",
+                  "request": "launch",
+                  "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                  "args": [],
+                  "stopAtEntry": false,
+                  "cwd": "C:/raylib/w64devkit/bin",
                   "environment": [],
                   "externalConsole": false,
-                  "program": "${workspaceFolder}/${fileBasenameNoExtension}",
                   "MIMode": "gdb",
-                  "windows": {
-                        "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",
-                        "miDebuggerPath": "C:/raylib/w64devkit/bin/gdb.exe"
-                  },
-                  "osx": {
-                        "MIMode": "lldb"
-                  },
-                  "linux": {
-                        "miDebuggerPath": "/usr/bin/gdb"
-                  },
-                  "preLaunchTask": "build release"
+                  "miDebuggerPath": "C:\\raylib\\w64devkit\\bin\\gdb.exe",
+                  "setupCommands": [
+                        {
+                              "description": "Enable pretty-printing for gdb",
+                              "text": "-enable-pretty-printing",
+                              "ignoreFailures": true
+                        },
+                        {
+                              "description": "Set Disassembly Flavor to Intel",
+                              "text": "-gdb-set disassembly-flavor intel",
+                              "ignoreFailures": true
+                        }
+                  ],
+                  "preLaunchTask": "C/C++: gcc.exe build active file"
             },
             {
                   "name": "C/C++: g++.exe build and debug active file",
